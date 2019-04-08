@@ -29,7 +29,7 @@ class RoundRobin {
                     this.timer += 2;
                 }
                 if (this.processes[process] === 0) {
-                    this.whenInterrupt.push("O processo " + (parseInt(process) + 1) + " terminou na " + this.interruptIn + "°" + " execução. " + "Tempo de termino: " + this.timer + "<br />");
+                    this.whenInterrupt.push("O processo " + (parseInt(process) + 1) + " terminou na " + this.interruptIn + "°" + " execução. " + "Tempo de termino: " + this.timer + "ms" + "<br />");
                 }
             }
         }
@@ -48,16 +48,6 @@ class RoundRobin {
     }
 
     showArray() {
-        let process;
-        console.log(this.interrupt);
-        console.log(this.arrayNull);
-        console.log(this.interruptIn);
-        for (process in this.processes) {
-            console.log(this.processes[process]);
-        }
-        for (process in this.whenInterrupt) {
-            console.log(this.whenInterrupt[process]);
-        }
         document.getElementById("process").innerHTML = this.whenInterrupt;
     }
 }
