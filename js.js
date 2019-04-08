@@ -22,11 +22,11 @@ class RoundRobin {
             if (this.processes[process] > 0) {
                 if (this.processes[process] < this.interrupt) {
                     this.processes[process] = 0;
-                    this.timer += 2;
+                    this.timer += this.interrupt;
                 }
                 if (this.processes[process] >= this.interrupt) {
                     this.processes[process] = this.processes[process] - this.interrupt;
-                    this.timer += 2;
+                    this.timer += this.interrupt;
                 }
                 if (this.processes[process] === 0) {
                     this.whenInterrupt.push("O processo " + (parseInt(process) + 1) + " terminou na " + this.interruptIn + "°" + " execução. " + "Tempo de termino: " + this.timer + "ms" + "<br />");
