@@ -11,8 +11,6 @@
     <style>
         body {
             font-family: sans-serif;
-            /* border: 3px solid palevioletred;
-            padding: 10px; */
         }
 
         h1 {
@@ -37,15 +35,45 @@
             background-color: blueviolet;
             width: 800px;
             position: relative;
-            right: -29%;
+            right: -20%;
             border-radius: 10px;
             margin-bottom: 10px;
             overflow: auto;
-            word-wrap: break-word;
+            word-break: break-all;
+            padding: 5px;
         }
 
         .contentSecond {
             padding: 1px;
+        }
+
+        input {
+            position: relative;
+            margin-bottom: 2px;
+            padding: 10px;
+            width: 30%;
+            border-radius: 5px;
+            border: 0;
+            border: blueviolet;
+        }
+
+        .alignInput {
+            position: relative;
+            left: 36px;
+        }
+
+        .alignLabel {
+            position: relative;
+            left: 35px;
+        }
+
+        .actionButton {
+            position: relative;
+            width: 50px;
+            left: 120px;
+            top: 6px;
+            padding: 6px;
+            border-radius: 5px;
         }
     </style>
 
@@ -56,11 +84,32 @@
     <div>
         <div class="main">
             <div class="contentSecond">
-                <h1>RESULTADO</h1>
+                <h1>ROUND ROBIN</h1>
             </div>
         </div>
         <div class="main">
+            <form id="formulario">
+                <label for="Time quantum"><b>Time quantum</b></b></label>
+                <input id="interrupt" type="number" placeholder="Digite um valor Quantum Time">
+                <hr />
+                <label class="alignLabel" for="Processo 1">Processo 0</label>
+                <input class="alignInput" type="number" id="process1" placeholder="Digite um valor para o processo 1">
+                <label class="alignLabel" for="Processo 2">Processo 1</label>
+                <input class="alignInput" type="number" id="process2" placeholder="Digite um valor para o processo 2">
+                <br />
+                <label class="alignLabel" for="Processo 3">Processo 2</label>
+                <input class="alignInput" type="number" id="process3" placeholder="Digite um valor para o processo 3">
+                <label class="alignLabel" for="Processo 4">Processo 3</label>
+                <input class="alignInput" type="number" id="process4" placeholder="Digite um valor para o processo 4">
+                <br />
+                <input class="actionButton" type="submit" value="RUN">
+            </form>
+        </div>
+        <div class="main">
+            <h1>RESULTADO</h1>
             <p class="resultFinal" id="process"></p>
+            <hr />
+            <p class=>*O RESULTADO ESTÁ ORGANIZADO POR ORDER DE TÉRMINO</p>
         </div>
     </div>
 
